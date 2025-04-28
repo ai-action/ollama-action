@@ -33,7 +33,7 @@ runs:
         EOF=EOF_OLLAMA_$(openssl rand -hex 12)
         {
           echo "response<<$EOF"
-          ollama run $MODEL "$PROMPT"
+          ollama run $MODEL "${PROMPT@Q}"
           echo $EOF
         } >> $GITHUB_OUTPUT
       env:
