@@ -58,12 +58,6 @@ jobs:
             echo "The time is now $(date +%T)"
             ```
 
-            ## Code block
-            
-            ```python
-            print("Hello, world!")
-            ```
-
       - name: Print response 3
         shell: bash
         env:
