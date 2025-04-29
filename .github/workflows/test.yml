@@ -43,3 +43,21 @@ jobs:
         env:
           response: ${{ steps.response-2.outputs.response }}
         run: echo "$response"
+
+      - name: Run action
+        id: response-3
+        uses: ./
+        with:
+          model: tinyllama
+          prompt: |
+            A markdown example with backticks:
+
+            ```bash
+            echo "Hello, world!"
+            ```
+            
+      - name: Print response 3
+        shell: bash
+        env:
+          response: ${{ steps.response-3.outputs.response }}
+        run: echo "$response"
