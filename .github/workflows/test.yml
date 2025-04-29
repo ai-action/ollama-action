@@ -50,12 +50,20 @@ jobs:
         with:
           model: tinyllama
           prompt: |
+            # Markdown example
+
             A markdown example with backticks:
 
             ```bash
-            echo "Hello, world!"
+            echo "The time is now $(date +%T)"
             ```
+
+            ## Code block
             
+            ```python
+            print("Hello, world!")
+            ```
+
       - name: Print response 3
         shell: bash
         env:
