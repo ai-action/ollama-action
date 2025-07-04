@@ -29,7 +29,7 @@ jobs:
         env:
           response: ${{ steps.response1.outputs.response }}
 
-      - name: Run action 2 with multiline prompt
+      - name: Run action 2 with multiline prompt and version
         id: response2
         uses: ./
         with:
@@ -37,7 +37,7 @@ jobs:
           prompt: |
             Tell me
             a joke.
-          version: 0.5.10
+          version: 0.9.4
           cache: false
 
       - name: Print response 2
