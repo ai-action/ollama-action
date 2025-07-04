@@ -37,7 +37,7 @@ jobs:
           prompt: |
             Tell me
             a joke.
-          version: 0.9.5
+          version: 0.9.4
           cache: false
 
       - name: Print response 2
