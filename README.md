@@ -89,7 +89,7 @@ To set a multiline prompt:
 ```yaml
 - uses: ai-action/ollama-action@v1
   with:
-    version: 0.5.12
+    version: 0.9.5
 ```
 
 ### `cache`
