@@ -6,12 +6,16 @@ on:
 
 permissions:
   contents: write
-  issues: write
   pull-requests: write
 
 jobs:
-  release-please:
+  release:
     runs-on: ubuntu-latest
+    outputs:
+      major: ${{ steps.release.outputs.major }}
+      minor: ${{ steps.release.outputs.minor }}
+      release_created: ${{ steps.release.outputs.release_created }}
+      tag_name: ${{ steps.release.outputs.tag_name }}
 
     steps:
       - name: Release Please
@@ -20,17 +24,30 @@ jobs:
         with:
           release-type: simple
 
+  publish:
+    needs: release
+    runs-on: ubuntu-latest
+    if: ${{ needs.release.outputs.release_created }}
+
+    steps:
       - name: Checkout repository
         uses: actions/checkout@v5
 
-      - name: Tag major and minor versions
-        if: ${{ steps.release.outputs.release_created }}
+      - name: Configure Git user
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git tag -d v${{ steps.release.outputs.major }} || true
-          git tag -d v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }} || true
-          git tag -a v${{ steps.release.outputs.major }} -m 'Release v${{ steps.release.outputs.major }}'
-          git tag -a v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }} -m 'Release v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}'
-          git push -f origin v${{ steps.release.outputs.major }}
-          git push -f origin v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}
+
+      - name: Tag major and minor versions
+        run: |
+          git tag -d v${{ needs.release.outputs.major }} || true
+          git tag -d v${{ needs.release.outputs.major }}.${{ needs.release.outputs.minor }} || true
+          git tag -a v${{ needs.release.outputs.major }} -m 'Release v${{ needs.release.outputs.major }}'
+          git tag -a v${{ needs.release.outputs.major }}.${{ needs.release.outputs.minor }} -m 'Release v${{ needs.release.outputs.major }}.${{ needs.release.outputs.minor }}'
+          git push -f origin v${{ needs.release.outputs.major }}
+          git push -f origin v${{ needs.release.outputs.major }}.${{ needs.release.outputs.minor }}
+
+      - name: Tag latest release
+        run: gh release edit ${{ needs.release.outputs.tag_name }} --latest
+        env:
+          GH_TOKEN: ${{ github.token }}
