@@ -94,7 +94,7 @@ To set a multiline prompt:
 
 ### `cache`
 
-**Optional**: Whether to cache the model. Defaults to `true`.
+**Optional**: Whether to cache the model. Defaults to `false`.
 
 ```yaml
 - uses: ai-action/ollama-action@v1
