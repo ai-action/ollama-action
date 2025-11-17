@@ -1,10 +1,10 @@
 <p align="center">
-  <img alt="ollama" height="200px" src="https://raw.githubusercontent.com/ai-action/assets/master/logos/ollama.svg">
+  <img alt="Ollama" height="200" src="https://raw.githubusercontent.com/ai-action/assets/master/logos/ollama.svg">
 </p>
 
 # ollama-action
 
-[![version](https://badgen.net/github/release/ai-action/ollama-action)](https://github.com/ai-action/ollama-action/releases)
+[![version](https://img.shields.io/github/release/ai-action/ollama-action)](https://github.com/ai-action/ollama-action/releases)
 [![test](https://github.com/ai-action/ollama-action/actions/workflows/test.yml/badge.svg)](https://github.com/ai-action/ollama-action/actions/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
