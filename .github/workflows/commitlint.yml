@@ -14,4 +14,4 @@ jobs:
           fetch-depth: 0
 
       - name: Commitlint
-        uses: remarkablemark/commitlint@v1
+        uses: remarkablemark/commitlint@v2
