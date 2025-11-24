@@ -8,10 +8,7 @@ jobs:
   commitlint:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
-
       - name: Commitlint
         uses: remarkablemark/commitlint@v2
+        with:
+          checkout: true
