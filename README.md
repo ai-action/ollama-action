@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run model
-        uses: ai-action/ollama-action@v1
+        uses: ai-action/ollama-action@v2
         id: model
         with:
           model: llama3.2
@@ -37,7 +37,7 @@ jobs:
 Run a prompt against a [model](https://ollama.com/library):
 
 ```yaml
-- uses: ai-action/ollama-action@v1
+- uses: ai-action/ollama-action@v2
   id: explanation
   with:
     model: tinyllama
@@ -57,7 +57,7 @@ See [action.yml](action.yml)
 **Required**: The language [model](https://ollama.com/library) to use.
 
 ```yaml
-- uses: ai-action/ollama-action@v1
+- uses: ai-action/ollama-action@v2
   with:
     model: llama3.2
 ```
@@ -67,7 +67,7 @@ See [action.yml](action.yml)
 **Required**: The input prompt to generate the text from.
 
 ```yaml
-- uses: ai-action/ollama-action@v1
+- uses: ai-action/ollama-action@v2
   with:
     prompt: Tell me a joke.
 ```
@@ -75,7 +75,7 @@ See [action.yml](action.yml)
 To set a multiline prompt:
 
 ```yaml
-- uses: ai-action/ollama-action@v1
+- uses: ai-action/ollama-action@v2
   with:
     prompt: |
       Tell me
@@ -87,7 +87,7 @@ To set a multiline prompt:
 **Optional**: The [Ollama version](https://github.com/ai-action/setup-ollama#version). See all available [versions](https://github.com/ollama/ollama/releases).
 
 ```yaml
-- uses: ai-action/ollama-action@v1
+- uses: ai-action/ollama-action@v2
   with:
     version: 0.13.5
 ```
@@ -97,7 +97,7 @@ To set a multiline prompt:
 **Optional**: Whether to cache the model. Defaults to `true`.
 
 ```yaml
-- uses: ai-action/ollama-action@v1
+- uses: ai-action/ollama-action@v2
   with:
     cache: true
 ```
@@ -105,7 +105,7 @@ To set a multiline prompt:
 To disable model cache:
 
 ```yaml
-- uses: ai-action/ollama-action@v1
+- uses: ai-action/ollama-action@v2
   with:
     cache: false
 ```
@@ -117,7 +117,7 @@ To disable model cache:
 The generated response message.
 
 ```yaml
-- uses: ai-action/ollama-action@v1
+- uses: ai-action/ollama-action@v2
   id: answer
   with:
     model: llama3.2
