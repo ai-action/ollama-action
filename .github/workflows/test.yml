@@ -15,13 +15,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
 
-      - name: Run action 1 with cache
+      - name: Run action 1 without cache
         id: response1
         uses: ./
         with:
           model: tinyllama
           prompt: What's a large language model?
-          cache: true
+          cache: false
 
       - name: Print response 1
         shell: bash
@@ -37,8 +37,8 @@ jobs:
           prompt: |
             Tell me
             a joke.
-          version: 0.9.4
-          cache: false
+          version: 0.13.5
+          cache: true
 
       - name: Print response 2
         shell: bash

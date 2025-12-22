@@ -15,6 +15,7 @@ inputs:
   cache:
     description: Whether to cache the model
     required: false
+    default: true
 
 outputs:
   response:
