@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.0.0](https://github.com/ai-action/ollama-action/compare/v1.1.1...v2.0.0) (2025-12-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* **action:** set action input `cache` default to true
+* **action:** bump Node.js runtime from 20 to 24
+
+### Performance Improvements
+
+* **action:** default cache to true ([34a4030](https://github.com/ai-action/ollama-action/commit/34a403083dd54b66aa378dbeb64cdef6cb83765f))
+
+
+### Build System
+
+* **deps:** bump actions/cache from 4 to 5 ([#17](https://github.com/ai-action/ollama-action/issues/17)) ([a825720](https://github.com/ai-action/ollama-action/commit/a82572041f9d8462ce5e70565dbc2c1d7324d59f))
+* **deps:** bump ai-action/setup-ollama from 1 to 2 ([#19](https://github.com/ai-action/ollama-action/issues/19)) ([c730764](https://github.com/ai-action/ollama-action/commit/c7307649ae9d15ee2562cbdcc5ad9cdb4ce7b5c7))
+
 ## [1.1.1](https://github.com/ai-action/ollama-action/compare/v1.1.0...v1.1.1) (2025-07-04)
 
 
