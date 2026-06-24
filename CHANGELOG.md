@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/ai-action/ollama-action/compare/v2.0.0...v2.0.1) (2026-06-24)
+
+
+### Build System
+
+* **deps:** bump actions/cache from 5 to 6 ([#23](https://github.com/ai-action/ollama-action/issues/23)) ([5be998d](https://github.com/ai-action/ollama-action/commit/5be998d781fc0d0117631e43d9f8104a6be8769b))
+
 ## [2.0.0](https://github.com/ai-action/ollama-action/compare/v1.1.1...v2.0.0) (2025-12-22)
 
 
